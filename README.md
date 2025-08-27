@@ -18,16 +18,21 @@ amadeus/
 - **Technologies**: React, TypeScript, Vite, Material-UI
 - **Development port**: 5173
 - **Package manager**: pnpm
+- **Documentation**: [Frontend README](./amadeus-travel/README.md)
 
 ### Backend (amadeus-travel-api)
 
 - **Technologies**: Java, Spring Boot, Maven
 - **Port**: 8080
 - **Database**: H2 (development)
+- **Documentation**: [Backend README](./amadeus-travel-api/README.md)
 
 ## Development
 
-Each project maintains its own Git repository and independent configuration. To work with each project, navigate to its corresponding directory and follow the instructions in its specific README.
+Each project maintains its own Git repository and independent configuration. For detailed setup and development instructions, refer to each project's documentation:
+
+- **Frontend**: See [amadeus-travel/README.md](./amadeus-travel/README.md)
+- **Backend**: See [amadeus-travel-api/README.md](./amadeus-travel-api/README.md)
 
 ### Run Frontend
 
@@ -47,3 +52,18 @@ cd amadeus-travel-api
 ## Development Structure
 
 This monorepo allows managing both projects in a coordinated way while maintaining the independence of each one. Projects can be developed and deployed separately, but can also be versioned together when necessary.
+
+## Future Features
+
+### CI/CD Pipeline
+
+- **Automated Testing**: Lint and test both projects on every commit
+- **Change Detection**: Only build and deploy affected projects based on file changes
+- **Multi-Environment Deployment**:
+  - Staging environment with auto-deployment on `develop` branch
+  - Production deployment with manual approval on `main` branch
+- **Platform Options**: GitHub Actions, GitLab CI/CD, or Jenkins
+- **Build Strategy**:
+  - Frontend: ESLint, TypeScript checks, unit tests → build artifacts
+  - Backend: Checkstyle, unit/integration tests → JAR packaging
+- **Deployment**: Container-based deployment with blue-green or rolling strategies
