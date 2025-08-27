@@ -1,45 +1,49 @@
 # Amadeus Travel Platform
 
-Este es un monorepo que contiene la plataforma completa de Amadeus Travel, incluyendo tanto el frontend como el backend.
+This is a monorepo containing the complete Amadeus Travel platform, including both frontend and backend applications.
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 amadeus/
 ├── amadeus-travel/          # Frontend (React + TypeScript + Vite)
 ├── amadeus-travel-api/      # Backend (Java + Spring Boot)
-└── README.md               # Este archivo
+└── README.md               # This file
 ```
 
-## Proyectos
+## Projects
 
 ### Frontend (amadeus-travel)
-- **Tecnologías**: React, TypeScript, Vite, Material-UI
-- **Puerto de desarrollo**: 5173
-- **Gestión de paquetes**: pnpm
 
-### Backend (amadeus-travel-api)  
-- **Tecnologías**: Java, Spring Boot, Maven
-- **Puerto**: 8080
-- **Base de datos**: H2 (desarrollo)
+- **Technologies**: React, TypeScript, Vite, Material-UI
+- **Development port**: 5173
+- **Package manager**: pnpm
 
-## Desarrollo
+### Backend (amadeus-travel-api)
 
-Cada proyecto mantiene su propio repositorio Git y configuración independiente. Para trabajar con cada proyecto, navega a su directorio correspondiente y sigue las instrucciones de su README específico.
+- **Technologies**: Java, Spring Boot, Maven
+- **Port**: 8080
+- **Database**: H2 (development)
 
-### Ejecutar Frontend
+## Development
+
+Each project maintains its own Git repository and independent configuration. To work with each project, navigate to its corresponding directory and follow the instructions in its specific README.
+
+### Run Frontend
+
 ```bash
 cd amadeus-travel
 pnpm install
 pnpm dev
 ```
 
-### Ejecutar Backend
+### Run Backend
+
 ```bash
 cd amadeus-travel-api
 ./mvnw spring-boot:run
 ```
 
-## Estructura de Desarrollo
+## Development Structure
 
-Este monorepo permite gestionar ambos proyectos de forma coordinada mientras mantiene la independencia de cada uno. Los proyectos pueden desarrollarse y desplegarse por separado, pero también pueden versionarse juntos cuando sea necesario.
+This monorepo allows managing both projects in a coordinated way while maintaining the independence of each one. Projects can be developed and deployed separately, but can also be versioned together when necessary.
