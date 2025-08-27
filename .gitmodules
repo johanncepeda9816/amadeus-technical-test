@@ -1,0 +1,6 @@
+[submodule "amadeus-travel"]
+	path = amadeus-travel
+	url = https://github.com/johanncepeda9816/amadeus-travel.git
+[submodule "amadeus-travel-api"]
+	path = amadeus-travel-api
+	url = https://github.com/johanncepeda9816/amadeus-travel-api.git
