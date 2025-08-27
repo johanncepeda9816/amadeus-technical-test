@@ -1,17 +1,14 @@
 # Amadeus Travel Platform
 
-This is a monorepo containing the complete Amadeus Travel platform, including both frontend and backend applications.
+This is a monorepo containing the complete Amadeus Travel platform, including both frontend and backend applications as Git submodules.
 
 ## Project Structure
 
 ```
-amadeus/
-├── amadeus-travel/          # Frontend (React + TypeScript + Vite)
-│   ├── Dockerfile          # Frontend container configuration
-│   └── ...
-├── amadeus-travel-api/      # Backend (Java + Spring Boot)
-│   ├── Dockerfile          # Backend container configuration
-│   └── ...
+amadeus-technical-test/
+├── .gitmodules             # Git submodules configuration
+├── amadeus-travel/         # Frontend submodule (React + TypeScript + Vite)
+├── amadeus-travel-api/     # Backend submodule (Java + Spring Boot)
 ├── docker-compose.yml      # Multi-container orchestration
 └── README.md               # This file
 ```
@@ -23,21 +20,23 @@ amadeus/
 - **Technologies**: React, TypeScript, Vite, Material-UI
 - **Development port**: 5173
 - **Package manager**: pnpm
-- **Documentation**: [Frontend README](./amadeus-travel/README.md)
+- **Repository**: [amadeus-travel](https://github.com/johanncepeda9816/amadeus-travel)
+- **Documentation**: [Frontend README](https://github.com/johanncepeda9816/amadeus-travel#readme)
 
 ### Backend (amadeus-travel-api)
 
 - **Technologies**: Java, Spring Boot, Maven
 - **Port**: 8080
 - **Database**: H2 (development)
-- **Documentation**: [Backend README](./amadeus-travel-api/README.md)
+- **Repository**: [amadeus-travel-api](https://github.com/johanncepeda9816/amadeus-travel-api)
+- **Documentation**: [Backend README](https://github.com/johanncepeda9816/amadeus-travel-api#readme)
 
 ## Development
 
-Each project maintains its own Git repository and independent configuration. For detailed setup and development instructions, refer to each project's documentation:
+Each project is a Git submodule pointing to its own independent repository. For detailed setup and development instructions, refer to each project's documentation:
 
-- **Frontend**: See [amadeus-travel/README.md](./amadeus-travel/README.md)
-- **Backend**: See [amadeus-travel-api/README.md](./amadeus-travel-api/README.md)
+- **Frontend**: See [Frontend Repository](https://github.com/johanncepeda9816/amadeus-travel#readme)
+- **Backend**: See [Backend Repository](https://github.com/johanncepeda9816/amadeus-travel-api#readme)
 
 ### Run Frontend
 
@@ -66,9 +65,9 @@ The easiest way to run the entire platform is using Docker Compose. This will au
 ### Quick Start
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd amadeus
+# Clone the repository with submodules
+git clone --recursive https://github.com/johanncepeda9816/amadeus-technical-test.git
+cd amadeus-technical-test
 
 # Start all services
 docker-compose up --build
@@ -101,7 +100,31 @@ docker-compose down -v
 
 ## Development Structure
 
-This monorepo allows managing both projects in a coordinated way while maintaining the independence of each one. Projects can be developed and deployed separately, but can also be versioned together when necessary.
+This monorepo uses **Git Submodules** to manage both projects in a coordinated way while maintaining complete independence. Each project has its own repository, commit history, and can be developed separately.
+
+### Working with Submodules
+
+```bash
+# Clone repository with all submodules
+git clone --recursive https://github.com/johanncepeda9816/amadeus-technical-test.git
+
+# If you already cloned without --recursive, initialize submodules
+git submodule update --init --recursive
+
+# Update all submodules to latest commits
+git submodule update --remote
+
+# Work on individual projects
+cd amadeus-travel        # Work on frontend
+cd amadeus-travel-api    # Work on backend
+```
+
+### Submodule Benefits
+
+- ✅ **Independent Development**: Each project maintains its own Git history
+- ✅ **Coordinated Releases**: Version projects together when needed
+- ✅ **GitHub Integration**: Proper linking and navigation in GitHub
+- ✅ **Flexible Deployment**: Deploy projects independently or together
 
 ## Future Features
 
