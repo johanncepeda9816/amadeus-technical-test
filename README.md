@@ -76,9 +76,9 @@ docker-compose up --build
 
 ### Services
 
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8080
-- **API Documentation**: http://localhost:8080/swagger-ui.html
+- **Frontend**: http://localhost:5173
+- **Backend API**: http://localhost:8080/api
+- **API Documentation**: http://localhost:8080/api/swagger-ui.html
 
 ### Docker Commands
 
