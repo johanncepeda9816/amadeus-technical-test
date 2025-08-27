@@ -7,7 +7,12 @@ This is a monorepo containing the complete Amadeus Travel platform, including bo
 ```
 amadeus/
 ├── amadeus-travel/          # Frontend (React + TypeScript + Vite)
+│   ├── Dockerfile          # Frontend container configuration
+│   └── ...
 ├── amadeus-travel-api/      # Backend (Java + Spring Boot)
+│   ├── Dockerfile          # Backend container configuration
+│   └── ...
+├── docker-compose.yml      # Multi-container orchestration
 └── README.md               # This file
 ```
 
@@ -47,6 +52,51 @@ pnpm dev
 ```bash
 cd amadeus-travel-api
 ./mvnw spring-boot:run
+```
+
+## Docker Setup (Recommended)
+
+The easiest way to run the entire platform is using Docker Compose. This will automatically install all dependencies and start both applications.
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Quick Start
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd amadeus
+
+# Start all services
+docker-compose up --build
+```
+
+### Services
+
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8080
+- **API Documentation**: http://localhost:8080/swagger-ui.html
+
+### Docker Commands
+
+```bash
+# Start services in background
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+
+# Rebuild and start
+docker-compose up --build
+
+# Stop and remove all containers, networks, and volumes
+docker-compose down -v
 ```
 
 ## Development Structure
